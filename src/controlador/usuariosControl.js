@@ -28,7 +28,7 @@ export const crearUsuario = async (req, res) => {
     })
     try {
         const usuarioGuardado = await nuevoUsuario.save()
-        res.json(usuarioGuardado)
+        res.status(201).json(usuarioGuardado)
     } catch (error) {
         res.status(400).json({mensaje: error.message})
     }

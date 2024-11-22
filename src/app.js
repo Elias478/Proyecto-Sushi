@@ -13,6 +13,11 @@ app.use(cors({
 app.use(express.json())
 app.use(morgan('dev'))
 
+// Agregar una ruta raíz simple
+app.get('/', (req, res) => {
+  res.json({ mensaje: 'Bienvenido a la API' })
+})
+
 app.use('/api', router)
 app.use('/api', usuariosRutas)
 
